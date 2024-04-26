@@ -1,6 +1,6 @@
 # SQL 學習筆記
 
-[Learning SQL 閱讀筆記](/learning-sql/README.md)|[CS50 SQL 學習筆記](/CS50-SQL/)
+[Learning SQL 閱讀筆記](/learning-sql/README.md) | [CS50 SQL 學習筆記](/CS50-SQL/)
 
 ## 前言
 
