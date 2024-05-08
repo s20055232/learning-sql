@@ -417,3 +417,47 @@ CREATE TABLE "swipes" (
    
 
 
+### 2nd Normal Form
+
+要滿足兩個條件
+
+- 必須滿足 1st normal form
+
+- 不應該有任何「partial dependency」，也就是表中的非主鍵欄位必須完全依賴於主鍵
+
+2nd normal form 經常發生在具有複合主鍵的表設計
+
+來說明一下什麼是 partial dependency，但在這之前，我們要先明白 dependency 是什麼
+
+#### Dependency
+
+這邊的 dependency，又稱為「Functional Dependency」，定義是
+
+> 一組屬性（欄位）的值能夠確定另一組屬性的值。
+
+假設我們今天有一個 student table，有 id 跟 name 欄位，決定 name 會是什麼數值的取決於 id 是多少，反過來理解，就算我們知道 name 是什麼，也沒辦法決定 id 是什麼，這就是所謂「dependency」。
+
+| id | Name | 
+|---|---|
+| 1 | Allen | 
+| 2 | Benson | 
+
+接著來理解 partial dependency。
+
+#### Partial Dependency
+
+當一組屬性中的一部分屬性就足以確定另一個屬性時，這種依賴稱為部分功能依賴。例如，如果有一個由學生ID和學期組成的複合鍵，而學生ID就足以確定學生的姓名，那麼學生姓名對學生ID的依賴就是「Partial Dependency」。
+
+這經常發生在具有複合主鍵的表設計。
+
+### 3rd Normal Form
+
+要滿足兩個條件
+
+- 必須滿足 2rd normal form
+
+- 消除「transitive functional dependency」，也就是非主鍵欄位不能依賴於其他非主鍵欄位
+
+#### Transitive Functional Dependency
+
+當一個屬性的值依賴於另一個屬性，而這個屬性又依賴於第三個屬性時，這種依賴稱為「transitive functional dependency」。例如，如果 A 決定 B，B 決定 C，那麼 C 對 A 的依賴就是遞移的。
